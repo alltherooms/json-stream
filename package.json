@@ -1,0 +1,22 @@
+{
+  "author": {
+    "name": "Daniel López",
+    "email": "danypype@gmail.com"
+  },
+  "name": "json-stream",
+  "description": "Output JavaScript objects from a JSON string input. And do the same the other way",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/alltherooms/json-stream.git"
+  },
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "mocha": "^2.0.1"
+  }
+}

@@ -1,6 +1,8 @@
 #json-stream
 
-This is a tool to efficiently send and parse JSON data over the network.
+This is a tool to efficiently parse and send JSON data over the network.
+
+#Usage
 
 ##Output JSON string chunks from JavaScript objects.
 
@@ -25,3 +27,15 @@ http.get(options).on("response", function (response) {
   });
 });
 ```
+
+#Test
+
+Run the tests with:
+
+```
+$ npm test
+```
+
+#License
+
+MIT.
