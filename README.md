@@ -10,7 +10,7 @@ var Stringifier = require("json-stream").Stringifier;
 http.createServer(function (req, res) {
   var stringifier = new Stringifier();
   stringifier.pipe(res);
-  stringifier.end({a: 1, b: 2})''
+  stringifier.end({a: 1, b: 2});
 });
 ```
 
