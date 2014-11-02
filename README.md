@@ -2,27 +2,26 @@
 
 This is a tool to efficiently send and parse JSON data over the network.
 
-#Output JavaScript objects from JSON string inputs.
+#Output JSON string chunks from JavaScript objects.
 
 ```javascript
-var Parser = require("json-stream").Parser
-,   parser = new Parser();
+var Stringifier = require("json-stream").Stringifier;
 
-http.get(options).on("response", function (response) {
-  response.pipe(parser).on("data", function (object) {
-    //Handle `object`
-  });
+http.createServer(function (req, res) {
+  var stringifier = new Stringifier();
+  stringifier.pipe(res);
+  stringifier.end({a: 1, b: 2})''
 });
 ```
 
-#Output JSON string chunks from JavaScript object inputs.
+#Output JavaScript objects from JSON strings.
 
 ```javascript
-var http = require("http")
-,   Stringifier = require("json-stream").Stringifier
-,   stringifier = new Stringifier();
+var Parser = require("json-stream").Parser;
 
-http.createServer(function (req, res) {
-  res.pipe(stringifier).end({a: 1, b: 2});
+http.get(options).on("response", function (response) {
+  response.pipe(new Parser()).on("data", function (object) {
+    //Handle `object`
+  });
 });
 ```
