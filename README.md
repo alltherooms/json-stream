@@ -2,7 +2,7 @@
 
 This is a tool to efficiently send and parse JSON data over the network.
 
-#Output JSON string chunks from JavaScript objects.
+##Output JSON string chunks from JavaScript objects.
 
 ```javascript
 var Stringifier = require("json-stream").Stringifier;
@@ -14,7 +14,7 @@ http.createServer(function (req, res) {
 });
 ```
 
-#Output JavaScript objects from JSON strings.
+##Output JavaScript objects from JSON strings.
 
 ```javascript
 var Parser = require("json-stream").Parser;
