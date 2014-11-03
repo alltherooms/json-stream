@@ -6,7 +6,7 @@ describe("Parser", function () {
   });
 
   it("Gets a JavaScript object and streams JSON chunks", function () {
-    var object, objects = [];
+    var object, json, objects = [];
 
     for (var i = 0; i < 100; i++) {
       object = {
@@ -20,8 +20,10 @@ describe("Parser", function () {
           g: "some other string... }"
         }
       };
+      json = JSON.stringify(object);
       objects.push(object);
-      this.parser.write(JSON.stringify(object));
+      this.parser.write(json.substring(0, json.length / 2));
+      this.parser.write(json.substring(json.length / 2, json.length));
     };
 
     for (var i = 0; i < 100; i++) {
